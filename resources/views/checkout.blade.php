@@ -43,8 +43,11 @@
                             <div class="flex justify-between items-center border-b py-4">
                                 <div class="flex items-center">
                                     <img class="w-16 h-16 object-cover rounded" src="{{ asset('storage/' . $item->product->image) }}" alt="{{ $item->product->name }}">
-                                    <span class="ml-4">{{ $item->product->name }} x{{ $item->quantity }}</span>
+                                    <span class="ml-4">{{ $item->product->name }}</span>
                                 </div>
+
+                                <span class="text-gray-900">x {{ $item->quantity }}</span>
+
                                 <span class="text-gray-900">Rp {{ number_format($item->product->price * $item->quantity, 0, ',', '.') }}</span>
 
                                 <form action="{{ route('cart.removeItem', $item->id) }}" method="POST" class="ml-4">
