@@ -50,7 +50,6 @@
 
                 <div class="mt-6 flex space-x-4">
                     @if($order->status === 'pending')
-                        <!-- Tombol Konfirmasi -->
                         <form action="{{ route('orders.confirm', $order->id) }}" method="POST">
                             @csrf
                             <button type="submit"
@@ -59,7 +58,6 @@
                             </button>
                         </form>
 
-                        <!-- Tombol Batalkan -->
                         <form action="{{ route('orders.cancel', $order->id) }}" method="POST">
                             @csrf
                             <button type="submit"
@@ -70,7 +68,6 @@
                     @endif
 
                     @if($order->status === 'pending' || $order->status === 'confirmed')
-                        <!-- Tombol Proses -->
                         <form action="{{ route('orders.process', $order->id) }}" method="POST">
                             @csrf
                             <button type="submit"

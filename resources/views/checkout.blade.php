@@ -30,7 +30,6 @@
                     <div class="flex justify-between items-center">
                         <h3 class="text-xl font-semibold">Keranjang Belanja</h3>
 
-                        <!-- Tombol Hapus Semua Produk di Keranjang -->
                         <form action="{{ route('cart.clear') }}" method="POST" class="text-center">
                             @csrf
                             @method('DELETE')
@@ -48,7 +47,6 @@
                                 </div>
                                 <span class="text-gray-900">Rp {{ number_format($item->product->price * $item->quantity, 0, ',', '.') }}</span>
 
-                                <!-- Tombol Hapus Item -->
                                 <form action="{{ route('cart.removeItem', $item->id) }}" method="POST" class="ml-4">
                                     @csrf
                                     @method('DELETE')

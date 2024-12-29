@@ -9,7 +9,6 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <!-- Tampilkan pesan sukses jika ada -->
             @if(session('success'))
                 <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-4">
                     {{ session('success') }}
@@ -22,7 +21,7 @@
                     <thead>
                     <tr class="bg-gray-100">
                         <th class="px-4 py-2 text-left">Order ID</th>
-                        <th class="px-4 py-2 text-left">Nama User</th> <!-- Kolom baru -->
+                        <th class="px-4 py-2 text-left">Nama User</th>
                         <th class="px-4 py-2 text-left">Tanggal</th>
                         <th class="px-4 py-2 text-left">Total</th>
                         <th class="px-4 py-2 text-left">Status</th>
@@ -33,7 +32,7 @@
                     @foreach($orders as $order)
                         <tr class="border-b">
                             <td class="px-4 py-2">{{ $order->id }}</td>
-                            <td class="px-4 py-2">{{ $order->user->name ?? 'Guest' }}</td> <!-- Menampilkan nama user -->
+                            <td class="px-4 py-2">{{ $order->user->name ?? 'Guest' }}</td>
                             <td class="px-4 py-2">{{ $order->created_at->format('d-m-Y H:i:s') }}</td>
                             <td class="px-4 py-2">Rp {{ number_format($order->total, 0, ',', '.') }}</td>
                             <td class="px-4 py-2">

@@ -5,9 +5,7 @@
                 Dashboard
             </h2>
             <div class="flex items-center">
-                <!-- Menampilkan jumlah item di keranjang -->
                 @php
-                    // Ambil order berdasarkan user_id (karena user sudah login)
                     $order = \App\Models\Order::where('user_id', auth()->id())->where('status', 'pending')->first();
                     $orderItemCount = $order ? $order->items->sum('quantity') : 0;
                 @endphp
@@ -26,7 +24,6 @@
                 </div>
             @endif
 
-            <!-- Produk Cards -->
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
                 @forelse($products as $product)
                     <div class="bg-white border border-gray-200 rounded-lg shadow-lg overflow-hidden">

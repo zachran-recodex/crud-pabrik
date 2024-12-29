@@ -8,15 +8,13 @@ class OrderController extends Controller
 {
     public function index()
     {
-        // Mengambil semua orderan dengan relasi item produk
         $orders = Order::with('items.product')->get();
+
         return view('orders.index', compact('orders'));
     }
 
-    // Mengonfirmasi orderan
     public function confirm(Order $order)
     {
-        // Mengubah status order menjadi 'completed'
         $order->status = 'completed';
         $order->save();
 
@@ -25,7 +23,8 @@ class OrderController extends Controller
 
     public function show(Order $order)
     {
-        $order->load('items.product'); // Load relasi untuk detail barang
+        $order->load('items.product');
+
         return view('orders.show', compact('order'));
     }
 

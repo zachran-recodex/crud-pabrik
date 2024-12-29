@@ -14,14 +14,12 @@
     <div class="py-12">
         <div class="max-w-lg mx-auto sm:px-6 lg:px-8">
             <div class="bg-white shadow-md rounded-lg p-6 border border-gray-200">
-                <!-- Header Order -->
                 <div class="text-center">
                     <h3 class="text-xl font-bold text-gray-800">Terima kasih telah membeli produk kami!</h3>
                     <p class="text-gray-600 text-sm mb-4">Order #{{ $order->id }}</p>
                     <div class="border-t border-gray-300 pt-2"></div>
                 </div>
 
-                <!-- Order Status -->
                 <div class="text-center mt-4">
                     <h3 class="text-lg font-semibold">Status:
                         <span class="{{
@@ -59,7 +57,6 @@
                     </ul>
                 </div>
 
-                <!-- Footer -->
                 <div class="border-t border-gray-300 pt-4 mt-6">
                     <p class="text-center text-sm text-gray-500">Kami akan segera memproses pesanan Anda.</p>
                 </div>

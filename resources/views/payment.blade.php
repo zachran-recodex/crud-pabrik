@@ -28,10 +28,8 @@
                         }), 0, ',', '.') }}</span>
                     </div>
 
-                    <!-- Form Pembayaran -->
                     <form action="{{ route('checkout.complete') }}" method="POST" class="mt-6">
                         @csrf
-                        <!-- Misalnya memilih metode pembayaran -->
                         <div class="mb-4">
                             <label for="payment_method" class="block text-gray-700">Metode Pembayaran</label>
                             <select id="payment_method" name="payment_method" class="w-full border-gray-300 rounded-md">
