@@ -13,6 +13,20 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <style>
+            .user-indicator {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background-color: rgba(0, 0, 0, 0.7);
+                color: white;
+                padding: 8px 16px;
+                border-radius: 8px;
+                font-size: 14px;
+                font-weight: bold;
+            }
+        </style>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -31,6 +45,16 @@
             <main>
                 {{ $slot }}
             </main>
+
+            @auth
+                <div class="user-indicator">
+                    @if(Auth::user()->hasRole('user'))
+                        {{ Auth::user()->name }}
+                    @else
+                        Role: {{ Auth::user()->getRoleNames()->first() }}
+                    @endif
+                </div>
+            @endauth
         </div>
     </body>
 </html>
