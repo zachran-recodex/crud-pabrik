@@ -8,7 +8,7 @@ class OrderController extends Controller
 {
     public function index()
     {
-        $orders = Order::with('items.product')->get();
+        $orders = Order::with('items.product')->paginate(10);
 
         return view('orders.index', compact('orders'));
     }
