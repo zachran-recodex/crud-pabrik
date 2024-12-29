@@ -37,15 +37,15 @@
                             <td class="px-4 py-2">{{ $order->created_at->format('d-m-Y H:i:s') }}</td>
                             <td class="px-4 py-2">Rp {{ number_format($order->total, 0, ',', '.') }}</td>
                             <td class="px-4 py-2">
-                <span class="{{
-                      $order->status === 'pending' ? 'inline-block px-4 py-1 rounded-full bg-yellow-100 text-yellow-800' :
-                      ($order->status === 'completed' ? 'inline-block px-4 py-1 rounded-full bg-green-100 text-green-800' :
-                      ($order->status === 'cancelled' ? 'inline-block px-4 py-1 rounded-full bg-red-100 text-red-800' :
-                      ($order->status === 'processing' ? 'inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-800' :
-                      'inline-block px-4 py-1 rounded-full bg-gray-100 text-gray-800')))
-                  }}">
-                    {{ ucfirst($order->status) }}
-                </span>
+                                <span class="{{
+                                      $order->status === 'pending' ? 'inline-block px-4 py-1 rounded-full bg-yellow-100 text-yellow-800' :
+                                      ($order->status === 'completed' ? 'inline-block px-4 py-1 rounded-full bg-green-100 text-green-800' :
+                                      ($order->status === 'cancelled' ? 'inline-block px-4 py-1 rounded-full bg-red-100 text-red-800' :
+                                      ($order->status === 'processing' ? 'inline-block px-4 py-1 rounded-full bg-blue-100 text-blue-800' :
+                                      'inline-block px-4 py-1 rounded-full bg-gray-100 text-gray-800')))
+                                  }}">
+                                    {{ ucfirst($order->status) }}
+                                </span>
                             </td>
                             <td class="px-4 py-2">
                                 <a href="{{ route('orders.show', $order->id) }}"
@@ -57,6 +57,10 @@
                     @endforeach
                     </tbody>
                 </table>
+
+                <div class="mt-6">
+                    {{ $products->links() }}
+                </div>
             </div>
         </div>
     </div>

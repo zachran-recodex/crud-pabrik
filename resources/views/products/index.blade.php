@@ -77,6 +77,10 @@
                         </tr>
                     @endforelse
                 </table>
+
+                <div class="mt-6">
+                    {{ $products->links() }}
+                </div>
             </div>
         </div>
     </div>
